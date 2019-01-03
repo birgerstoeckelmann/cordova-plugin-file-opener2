@@ -80,7 +80,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			wasOpened = [docController presentPreviewAnimated: NO];
 		} else {
 			CDVViewController* cont = self.cdvViewController;
-			CGRect rect = CGRectMake(0, 0, cont.view.bounds.size.width, cont.view.bounds.size.height);
+			CGPoint centerPoint = [UIApplication sharedApplication].delegate.window.center;
+			CGRect rect = CGRectMake(centerPoint.x, centerPoint.y, 0, 0);
 			wasOpened = [docController presentOpenInMenuFromRect:rect inView:cont.view animated:YES];
 		}
 
